@@ -15,8 +15,12 @@ class ImageCard extends React.Component {
   }
 //identifica el span que debe asociar a cada imagen segun su altura
 setSpans=()=>{
-  const height = this.imageRef.current.clientHeight;
-  const spans = Math.ceil(height/10);
+   var spans=10;
+   if(this.imageRef!=null &&  this.imageRef.current!=null){
+    const height = this.imageRef.current.clientHeight;
+    spans = Math.ceil(height/10);
+   }
+
 
   this.setState({spans});
 };
